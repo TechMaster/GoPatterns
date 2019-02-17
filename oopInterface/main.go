@@ -40,9 +40,22 @@ func (duck *WildDuck) Dive() {
 func (duck *WildDuck) Fly() {
 	fmt.Println("Wild Duck can Fly")
 }
+
+
 func main() {
 	wildDuck := WildDuck{}
 	wildDuck.Fly()
 	wildDuck.Swim()
+
+
+	//Chú ý cách sử dụng biến kiểu iSwim
+	var aDuck iSwim = &wildDuck
+	aDuck.Swim()
+
+
+	domesticDuck := Duck{}
+	aDuck = &domesticDuck
+	aDuck.Dive()
+
 }
 
