@@ -6,7 +6,7 @@ import (
 
 type Person struct {
 	Name    string
-	Address Address  //Compose Address inside
+	Address  //Compose Address inside
 }
 type Address struct {
 	Number string
@@ -22,6 +22,10 @@ func (p *Person) Talk() {
 func (p *Person) Location() {
 	fmt.Println("I’m at", p.Address.Number, p.Address.Street, p.Address.City, p.Address.State, p.Address.Zip)
 }
+
+func (a *Address) ShowStreet() {
+	fmt.Println(a.Street)
+}
 func main() {
 	p := Person{
 		Name: "Steve",
@@ -35,4 +39,5 @@ func main() {
 	}
 	p.Talk()
 	p.Location()
+	p.ShowStreet()
 }

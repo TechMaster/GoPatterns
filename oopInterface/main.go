@@ -23,10 +23,10 @@ type WildDuck struct {
 func (duck *Duck) Swim() {
 	fmt.Println("Duck can Swim")
 }
-
+/*
 func (duck *Duck) Dive() {
 	fmt.Println("Duck can Dive")
-}
+}*/
 //----- Vịt Trời
 
 func (duck *WildDuck) Swim() {

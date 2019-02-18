@@ -42,7 +42,6 @@ func (duck WildDuck) Say(text string, times int) {
 }
 
 
-
 func main() {
 	wildDuck := WildDuck{}
 
@@ -66,6 +65,7 @@ func main() {
 	//Gọi method bằng tên. Phải dùng ValueOf chứ không phải TypeOf
 	reflect.ValueOf(&wildDuck).MethodByName("Fly").Call([]reflect.Value{})
 
+
 	Invoke(&wildDuck, "Say", "Quack Quack", 5)
 
 
@@ -73,6 +73,7 @@ func main() {
 	var somethingCanSwim iSwim =  &wildDuck
 	Invoke(somethingCanSwim, "Swim")
 	Invoke(somethingCanSwim, "Fly") // Vẫn chạy tốt mặc dù somethingCanSwim kiểu iSwim
+
 }
 
 func Invoke(any interface{}, name string, args... interface{}) {
