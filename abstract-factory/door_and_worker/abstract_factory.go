@@ -4,12 +4,13 @@ type IFactory interface {
 	GetDoor() IDoor
 	GetWorker() IWorker
 }
-//--------- type SteelDoorFactory
+//--------- type WoodenDoorFactory
 type WoodenDoorFactory struct {
 	door IDoor
 	worker IWorker
 }
 
+//Constructor
 func NewWoodenDoorFactory() IFactory {
 	var woodenDoorFactory = new(WoodenDoorFactory)
 	woodenDoorFactory.door =  NewWoodenDoor("African Oak")
@@ -31,6 +32,7 @@ type SteelDoorFactory struct {
 	worker IWorker
 }
 
+//Constructor
 func NewSteelDoorFactory() IFactory {
 	var steelDoorFactory = new(SteelDoorFactory)
 	steelDoorFactory.door = NewSteelDoor("US Carnege Steel")
